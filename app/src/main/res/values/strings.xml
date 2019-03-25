@@ -6,4 +6,10 @@
     <string name="find_movie">Buscar Pelicula</string>
     <string name="movie_image">Movie Image</string>
     <string name="movies_cannot_be_retrieved">No se pudieron obtener peliculas, por favor intente nuevamente</string>
+    <string name="package_name">uio.androidbootcamp.moviesapp</string>
+    <string name="movie_saved">Pelicula almacenada con exito</string>
+    <string name="movie_not_saved">La película ya está guardada como favorita</string>
+    <string name="favorite_movies">Películas favoritas</string>
+    <string name="popular_movies">Películas más populares</string>
+    <string name="find_movie_by_name">Buscar pelicula por nombre</string>
 </resources>

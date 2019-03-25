@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_navigate_to_find_movie"
+        android:title="@string/find_movie_by_name" />
+    <item android:id="@+id/menu_navigate_to_movies_list"
+        android:title="@string/popular_movies" />
+    <item android:id="@+id/menu_navigate_to_favorite_movies_list"
+        android:title="@string/favorite_movies" />
+</menu>

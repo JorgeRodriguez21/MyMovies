@@ -14,6 +14,9 @@ import uio.androidbootcamp.moviesapp.model.services.RetrofitInstance
 import uio.androidbootcamp.moviesapp.presenter.MovieListPresenter
 import uio.androidbootcamp.moviesapp.utils.Constants
 import uio.androidbootcamp.moviesapp.view.adapters.MovieListAdapter
+import android.view.Menu
+import android.view.MenuItem
+
 
 class MovieListActivity : AppCompatActivity(), MovieListPresenter.MovieListView {
 
@@ -48,7 +51,7 @@ class MovieListActivity : AppCompatActivity(), MovieListPresenter.MovieListView 
     }
 
     override fun getMovieListService(): MovieListService {
-        val movieRestService : MovieRestServices = RetrofitInstance.retrofit.create(MovieRestServices::class.java)
+        val movieRestService: MovieRestServices = RetrofitInstance.retrofit.create(MovieRestServices::class.java)
         return MovieListService(presenter, movieRestService)
     }
 
@@ -58,5 +61,27 @@ class MovieListActivity : AppCompatActivity(), MovieListPresenter.MovieListView 
         startActivity(intent)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.navigation_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_navigate_to_find_movie -> {
+                startActivity(Intent(applicationContext, FindMovieActivity::class.java))
+                true
+            }
+            R.id.menu_navigate_to_favorite_movies_list -> {
+                startActivity(Intent(applicationContext, FavoriteMovieListActivity::class.java))
+                true
+            }
+            else -> {
+                startActivity(Intent(applicationContext, MovieListActivity::class.java))
+                finish()
+                true
+            }
+        }
+    }
 
 }
